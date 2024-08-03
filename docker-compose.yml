@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  postgresDb:
+    image: postgres
+    restart: always
+    volumes:
+      - Store-data:/var/lib/postgresql/data
+    container_name: Store-container
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: Store2004@admin.com
+      POSTGRES_PASSWORD: Store2004@Password20040625259273
+      POSTGRES_DB: StoreDb
+    logging:
+      driver: json-file
+      options:
+        max-size: 100m 
+volumes:
+  Store-data:
+
+  
